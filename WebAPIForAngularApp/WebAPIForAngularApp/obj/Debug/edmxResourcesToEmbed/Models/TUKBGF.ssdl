@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TUKBGFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'TUKBGF.dbo.Documents' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Documents">
+          <Property Name="DocId" Type="bigint" />
+          <Property Name="DocName" Type="varchar" MaxLength="250" />
+          <Property Name="DocPath" Type="varchar" MaxLength="550" />
+          <Property Name="UplodedOn" Type="datetime" />
+        </EntityType>-->
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventTitle" Type="varchar" MaxLength="250" />
+    <Property Name="EventDetail" Type="varchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreateBy" Type="bigint" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="ImagePath" Type="varchar" MaxLength="150" />
+    <Property Name="ImageName" Type="varchar" MaxLength="100" />
+    <Property Name="UpdateOn" Type="datetime" />
+    <Property Name="UpdateBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsTitle" Type="varchar(max)" />
+    <Property Name="ImagePath" Type="varchar(max)" />
+    <Property Name="ImageName" Type="varchar" MaxLength="250" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="DisplayAtHome" Type="bit" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="NewsDescription" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UmUserMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TUKBGFModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UmUserMaster" EntityType="Self.UmUserMaster" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ab176a16143544a6a522a84ef44eafad" Name="Diagram1">
+        <EntityTypeShape EntityType="TUKBGFModel.C__MigrationHistory" Width="1.5" PointX="8" PointY="1.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="TUKBGFModel.Event" Width="1.5" PointX="8" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="TUKBGFModel.News" Width="1.5" PointX="8.125" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="TUKBGFModel.UmUserMaster" Width="1.5" PointX="1" PointY="0.875" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
